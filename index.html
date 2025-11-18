@@ -3,121 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ipaoneboys?</title>
+    <title>IPA ONE BOYS - Z</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background-color: #f2f2f2;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
         }
+
+        body {
+            background: #f9f9f9;
+            color: #333;
+        }
+
         header {
-            background-color: #2A71D0;
-            color: white;
-            padding: 30px;
+            height: 70vh;
+            background: url('https://github.com/jonasianipar7-pixel/profile/raw/3b0097f1d4963466f32a70c101ab7868a39c7e4d/Gelap%20Vintage%20Minimalist%20Kenangan%20Oktober%20Photo%20Collage_20251118_133257_0000.jpg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             text-align: center;
+            color: #fff;
+            position: relative;
         }
+
+        header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4); /* overlay */
+        }
+
+        header h1 {
+            font-size: 60px;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 22px;
+            margin-top: 15px;
+            z-index: 1;
+        }
+
         nav {
-            background-color: #1A4F8B;
-            padding: 10px;
-            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 79, 139, 0.9);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            z-index: 10;
         }
+
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: 0.3s;
         }
-        .hero {
-            position: relative;
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
             text-align: center;
-            color: white;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #1A4F8B;
         }
-        .hero img {
+
+        .member-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .member-list div {
+            background: #1A4F8B;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .member-list div:hover {
+            transform: scale(1.1);
+            background: #2A71D0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
             width: 100%;
-            height: 300px;
-            object-fit: cover;
-            filter: brightness(70%);
+            border-radius: 20px;
+            transition: 0.3s;
+            cursor: pointer;
         }
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 36px;
-            font-weight: bold;
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
-        .container {
-            padding: 30px;
-        }
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-        }
+
         footer {
-            background-color: #2A71D0;
+            background: #1A4F8B;
             color: white;
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 25px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>IPA ONE BOYS</h1>
-    <p>since 2022</p>
-</header>
-
 <nav>
-    <a href="#profil">Profil</a>
-    <a href="#guru">Member</a>
-    <a href="#galeri">Galeri</a>
-    <a href="#kontak">Kontak</a>
+    <a href="#about">Tentang</a>
+    <a href="#members">Member</a>
+    <a href="#gallery">Galeri</a>
+    <a href="#contact">Kontak</a>
 </nav>
 
-<!-- HERO FIXED -->
-<div class="hero">
-    <img src="https://github.com/jonasianipar7-pixel/profile/raw/509c550fbc6e48a2fe9bfe85b7b7849b81b4118e/IMG-20230509-WA0029.jpg" alt="Foto Kelas">
-    <div class="hero-text">IPA ONE BOYS</div>
-</div>
+<header>
+    <h1>IPA ONE BOYS</h1>
+    <p>Tidak Perlu Terlihat Terang Karena Kita Bukan Bintang</p>
+</header>
 
-<div class="container">
+<section id="about">
+    <h2>Tentang Kami</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+        nikmati selagi masih bersama karna suatu hari nanti masa ini hanyalah sebuah cerita.
+    </p>
+</section>
 
-    <div class="card" id="profil">
-        <h2>MOTO IPA ONE BOYS</h2>
-        <p>"Reaksi kimia boleh berakhir, tapi persahabatan IPA One Boys nggak ada titik akhir."</p>
+<section id="members">
+    <h2>Member Kelas</h2>
+    <div class="member-list">
+        <div>ILHAM</div>
+        <div>IKSAN</div>
+        <div>TSABIT</div>
+        <div>NALKY</div>
+        <div>ADIT</div>
+        <div>FAHRIN</div>
+        <div>ZONA</div>
+        <div>RAFLY</div>
+        <div>TUBAGUS</div>
+        <div>NEHAN</div>
+        <div>FATHUR</div>
+        <div>AGUS</div>
+        <div>NURI</div>
     </div>
+</section>
 
-    <div class="card" id="guru">
-        <h2>MEMBER</h2>
-
-        <!-- MEMBER PHOTO FIXED -->
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/40d52400030c5d4bebf832bcfbac2e522423cf18/IMG-20250430-WA0146.jpg" 
-             style="width:200px; border-radius:10px;">
-
-        <p><strong>Nama:</strong> ILHAM, IKSAN, TSABIT, NALKY, ADIT, FAHRIN, ZONA, RAFLY, TUBAGUS, NEHAN, FATHUR, AGUS</p>
-        <p><strong>Foto Gak Pernah Lengkap</strong></p>
-    </div>
-
-    <div class="card" id="galeri">
-        <h2>Galeri Kelas</h2>
-
-        <!-- GALERI FIXED -->
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250222-WA0275.jpg" 
-             style="width:300px; border-radius:20px; margin:10px;">
+<section id="gallery">
+    <h2>Galeri Kelas</h2>
+    <div class="gallery-grid">
+        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/20250407_222858_790.jpg">
+        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20221217-WA0013.jpg">
+        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0006.jpg">
+        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0009.jpg">
+         <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250222-WA0275.jpg"> 
+             
 
         <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250121-WA0045.jpg" 
-             style="width:300px; border-radius:20px; margin:10px;">
+             >
 
         <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250119-WA0013.jpg" 
-             style="width:300px; border-radius:20px; margin:10px;">
+             >
+             
+             
+             
+
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/20250407_222858_790.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20221217-WA0013.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0006.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0009.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230412-WA0002.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230612-WA0129.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230612-WA0147.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230727-WA0018.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20231123-WA0012.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240206-WA0019.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240615-WA0017.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240817-WA0044.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240818-WA0009.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240822-WA0009.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20241006-WA0043.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20241007-WA0013.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20241126-WA0095.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250209-WA0013.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250217-WA0027.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250315-WA0078.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250412-WA0192.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250430-WA0175.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250511-WA0072.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250603-WA0052.jpg">
     </div>
+</section>
 
-</div>
+<section id="contact">
+    <h2>Kontak</h2>
+    <p style="text-align:center;">
+        Hubungi kami: <a href="https://www.instagram.com/darkside.scienceone" target="_blank">Instagram</a>
+    </p>
+</section>
 
-<footer id="kontak">
-    <p>Hubungi kami: @darkside.scienceone</p
+<footer>
+    © 2025 IPA ONE BOYS
+</footer>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // Optional: efek scroll animasi sederhana
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+        sections.forEach(sec => {
+            const rect = sec.getBoundingClientRect();
+            if(rect.top < window.innerHeight - 100) {
+                sec.style.opacity = 1;
+                sec.style.transform = 'translateY(0)';
+            } else {
+                sec.style.opacity = 0;
+                sec.style.transform = 'translateY(50px)';
+            }
+        });
+    });
+
+    sections.forEach(sec => {
+        sec.style.transition = 'all 0.8s ease';
+        sec.style.opacity = 0;
+        sec.style.transform = 'translateY(50px)';
+    });
+</script>
+
+</body>
+</html>
