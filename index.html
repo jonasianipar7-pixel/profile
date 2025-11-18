@@ -98,80 +98,95 @@
 
   /* Member Cards */
   .member-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* sedikit lebih longgar untuk jarak yang lebih enak */
+  padding: 10px;
+}
 
+.member-list a {
+  display: flex;
+  flex-direction: column; /* agar bisa menampung nama & peran jika diperlukan */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 140px; /* ukuran kotak tetap */
+  padding: 15px 20px;
+  background: rgba(40, 40, 40, 0.7);
+  color: #e0e0e0;
+  font-weight: 600;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  backdrop-filter: blur(6px);
+  text-decoration: none; /* hilangkan garis bawah */
+}
+
+.member-list a:hover {
+  transform: scale(1.08);
+  background: rgba(30, 30, 30, 0.9);
+  box-shadow: 0 0 15px #1e90ff, 0 0 25px #1e90ff40;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
   .member-list a {
-    display: inline-block;
-    background: rgba(40,40,40,0.7);
-    color: #e0e0e0;
-    padding: 14px 22px;
-    border-radius: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.4s;
-    position: relative;
-    backdrop-filter: blur(6px);
+    width: 120px; /* lebih kecil untuk layar medium */
+    padding: 12px 18px;
   }
+}
 
-  .member-list a:hover {
-    transform: scale(1.08);
-    background: rgba(30,30,30,0.9);
-    box-shadow: 0 0 15px #1e90ff, 0 0 25px #1e90ff40;
+@media (max-width: 480px) {
+  .member-list {
+    gap: 12px;
   }
+  .member-list a {
+    width: 100px; /* lebih kecil untuk layar hp */
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}
 
-  /* Tooltip Info */
-  .member-list a::after {
-    content: attr(title);
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #1f1f1f;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 12px;
-    border-radius: 6px;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-    white-space: nowrap;
-  }
-
-  .member-list a:hover::after {
-    opacity: 1;
-    bottom: -40px;
-  }
 
   /* Gallery */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
 
-  .gallery-grid img {
-    width: 100%;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.4s;
-  }
+.gallery-grid img {
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .gallery-grid img:hover {
-    transform: scale(1.05) rotate(-1deg);
-    box-shadow: 0 6px 20px rgba(30,144,255,0.5);
-  }
+.member-card span {  
+  font-size: 14px;  
+  color: #bbb;  
+}  
 
-  footer {
-    background: #1f1f1f;
-    color: #e0e0e0;
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
-  }
+.gallery-grid img:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 6px 20px rgba(30,144,255,0.5);
+}
+
+/* Animasi saat ditekan: gambar membesar */
+.gallery-grid img:active {
+  transform: scale(1.2) rotate(0deg);
+  box-shadow: 0 15px 30px rgba(30,144,255,0.5);
+}
+
+footer {
+  background: #1f1f1f;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+}
 
   /* Scroll Animasi */
   section.show {
@@ -209,6 +224,31 @@
 <section id="members">
   <h2>Member Kelas</h2>
   <div class="member-list">
+    <style>
+    /* Tooltip Info diperbarui */
+.member-list a::after {
+    content: attr(title);
+    position: absolute;
+    top: -35px; /* tampil di atas elemen */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f1f1f;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    white-space: nowrap;
+    z-index: 100; /* pastikan selalu di atas */
+}
+
+.member-list a:hover::after {
+    opacity: 1;
+    top: -45px; /* naik sedikit saat hover */
+}
+</style>
     <a href="https://www.instagram.com/ilhamm.srg_?igsh=djdjNDl1cjdrZDF4" target="_blank" title="Ilham - Tor Monitor">ILHAM</a>
     <a href="https://www.instagram.com/sann.ikhsannn?igsh=MW80Z2dvYmtwY3J6Zg==" target="_blank" title="Iksan - Hala Madrid">IKSAN</a>
     <a href="https://www.instagram.com/tsabit_alfatih?igsh=c3FqYnc0Y2EyOHFw" target="_blank" title="Tsabit - Footbal">TSABIT</a>
@@ -220,7 +260,7 @@
     <a href="https://www.instagram.com/tb_rachmatf?igsh=bnh2Z2t3MTN3eHo0" target="_blank" title="Tubagus - Sports">TUBAGUS</a>
     <a href="https://www.instagram.com/ghazien07?igsh=MTUzMHhvcjNxaWk4Ng==" target="_blank" title="Nehan - Pintar">NEHAN</a>
     <a href="https://www.instagram.com/fathurrhmn.n?igsh=MThlNzQxMnN6eWRzaA==" target="_blank" title="Fathur - Bucin">FATHUR</a>
-    <a href="https://www.instagram.com/agusszx?igsh=MWpuN2M5bWtwOHJvaQ==" target="_blank" title="Agus - Sipit">AGUS</a>
+    <a href="https://www.instagram.com/agusszx?igsh=MWpuN2M5bWtwOHJvaQ==" target="_blank" title="Agus - Koko">AGUS</a>
     <a href="https://www.instagram.com/muhammaadnurii?igsh=dWp6cTYxOHBpaDl1" target="_blank" title="Nuri - Laut">NURI</a>
     <a href="https://www.instagram.com/fariz.alkhfi?igsh=MW13ZnRwaTgxaGo2cg==" target="_blank" title="Fariz - Ustad">FARIZ</a>
   </div>
@@ -231,31 +271,35 @@
   <div class="gallery-grid">
     
              
+             
+            
 
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/20250407_222858_790.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250217-WA0027.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230727-WA0018.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20221217-WA0013.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0006.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0009.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230412-WA0002.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230612-WA0129.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230612-WA0147.jpg" >
-<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230727-WA0018.jpg" >
-<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20231123-WA0012.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240206-WA0019.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240615-WA0017.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240817-WA0044.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240818-WA0009.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20240822-WA0009.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20241006-WA0043.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20231123-WA0012.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20241007-WA0013.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20241126-WA0095.jpg" >
-<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250209-WA0013.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250217-WA0027.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250315-WA0078.jpg" >
+<img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250209-WA0013.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250412-WA0192.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250430-WA0175.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250511-WA0072.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250603-WA0052.jpg">
+        <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250121-WA0045.jpg">
   </div>
 </section>
 
