@@ -1,194 +1,235 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPA ONE BOYS - Z</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPA ONE BOYS - By Z</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
 
-        body {
-            background: #f9f9f9;
-            color: #333;
-        }
+  body {
+    background: #121212;
+    color: #e0e0e0;
+    transition: background 0.3s, color 0.3s;
+  }
 
-        header {
-            height: 70vh;
-            background: url('https://github.com/jonasianipar7-pixel/profile/raw/3b0097f1d4963466f32a70c101ab7868a39c7e4d/Gelap%20Vintage%20Minimalist%20Kenangan%20Oktober%20Photo%20Collage_20251118_133257_0000.jpg') center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
+  a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
 
-        header::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.4); /* overlay */
-        }
+  a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 8px #ffd700;
+  }
 
-        header h1 {
-            font-size: 60px;
-            z-index: 1;
-        }
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.95);
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
 
-        header p {
-            font-size: 22px;
-            margin-top: 15px;
-            z-index: 1;
-        }
+  nav a {
+    margin: 0 15px;
+    font-weight: 600;
+  }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(26, 79, 139, 0.9);
-            display: flex;
-            justify-content: center;
-            padding: 10px 0;
-            z-index: 10;
-        }
+  header {
+    height: 85vh;
+    background: url('https://github.com/jonasianipar7-pixel/profile/raw/3b0097f1d4963466f32a70c101ab7868a39c7e4d/Gelap%20Vintage%20Minimalist%20Kenangan%20Oktober%20Photo%20Collage_20251118_133257_0000.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: #fff;
+  }
 
-        nav a {
-            color: white;
-            margin: 0 20px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+  header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+  }
 
-        nav a:hover {
-            color: #ffd700;
-        }
+  header h1 {
+    font-size: 50px;
+    z-index: 1;
+    text-shadow: 0 0 12px #1e90ff;
+  }
 
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  header p {
+    font-size: 18px;
+    margin-top: 10px;
+    z-index: 1;
+    color: #ccc;
+  }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 32px;
-            color: #1A4F8B;
-        }
+  section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+  }
 
-        .member-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #1e90ff;
+    text-shadow: 0 0 6px #1e90ff;
+  }
 
-        .member-list div {
-            background: #1A4F8B;
-            color: #fff;
-            padding: 15px 25px;
-            border-radius: 15px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+  /* Member Cards */
+  .member-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
-        .member-list div:hover {
-            transform: scale(1.1);
-            background: #2A71D0;
-        }
+  .member-list a {
+    display: inline-block;
+    background: rgba(40,40,40,0.7);
+    color: #e0e0e0;
+    padding: 14px 22px;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    backdrop-filter: blur(6px);
+  }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
+  .member-list a:hover {
+    transform: scale(1.08);
+    background: rgba(30,30,30,0.9);
+    box-shadow: 0 0 15px #1e90ff, 0 0 25px #1e90ff40;
+  }
 
-        .gallery-grid img {
-            width: 100%;
-            border-radius: 20px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
+  /* Tooltip Info */
+  .member-list a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f1f1f;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    white-space: nowrap;
+  }
 
-        .gallery-grid img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+  .member-list a:hover::after {
+    opacity: 1;
+    bottom: -40px;
+  }
 
-        footer {
-            background: #1A4F8B;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-    </style>
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 6px 20px rgba(30,144,255,0.5);
+  }
+
+  footer {
+    background: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+  }
+
+  /* Scroll Animasi */
+  section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Audio Player (Hidden) */
+  audio {
+    display: none;
+  }
+</style>
 </head>
 <body>
 
 <nav>
-    <a href="#about">Tentang</a>
-    <a href="#members">Member</a>
-    <a href="#gallery">Galeri</a>
-    <a href="#contact">Kontak</a>
+  <a href="#about">Tentang</a>
+  <a href="#members">Member</a>
+  <a href="#gallery">Galeri</a>
+  <a href="#contact">Kontak</a>
 </nav>
 
 <header>
-    <h1>IPA ONE BOYS</h1>
-    <p>Tidak Perlu Terlihat Terang Karena Kita Bukan Bintang</p>
+  <h1>IPA ONE BOYS</h1>
+  <p>Tidak Perlu Terlihat Terang Karena Kita Bukan Bintang</p>
 </header>
 
 <section id="about">
-    <h2>Tentang Kami</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-        nikmati selagi masih bersama karna suatu hari nanti masa ini hanyalah sebuah cerita.
-    </p>
+  <h2>Tentang Kami</h2>
+  <p style="text-align:center;">
+    Nikmati selagi masih bersama karena suatu hari nanti masa ini hanyalah sebuah cerita.
+  </p>
 </section>
 
 <section id="members">
-    <h2>Member Kelas</h2>
-    <div class="member-list">
-        <div>ILHAM</div>
-        <div>IKSAN</div>
-        <div>TSABIT</div>
-        <div>NALKY</div>
-        <div>ADIT</div>
-        <div>FAHRIN</div>
-        <div>ZONA</div>
-        <div>RAFLY</div>
-        <div>TUBAGUS</div>
-        <div>NEHAN</div>
-        <div>FATHUR</div>
-        <div>AGUS</div>
-        <div>NURI</div>
-        <div>FARIZ</div>
-    </div>
+  <h2>Member Kelas</h2>
+  <div class="member-list">
+    <a href="https://www.instagram.com/ilhamm.srg_?igsh=djdjNDl1cjdrZDF4" target="_blank" title="Ilham - Tor Monitor">ILHAM</a>
+    <a href="https://www.instagram.com/sann.ikhsannn?igsh=MW80Z2dvYmtwY3J6Zg==" target="_blank" title="Iksan - Hala Madrid">IKSAN</a>
+    <a href="https://www.instagram.com/tsabit_alfatih?igsh=c3FqYnc0Y2EyOHFw" target="_blank" title="Tsabit - Footbal">TSABIT</a>
+    <a href="https://www.instagram.com/ikkybosque22?igsh=NWFkbTd6czNoejUy" target="_blank" title="Nalky - RafaelStruick">NALKY</a>
+    <a href="https://www.instagram.com/adithya.lexxy?igsh=MWQ3c2F5ZXRicWx4OA==" target="_blank" title="Adit - Cool">ADIT</a>
+    <a href="https://www.instagram.com/farin_12kun?igsh=MXkxdG4yMG00eHdqaQ==" target="_blank" title="Fahrin - Preman">FAHRIN</a>
+    <a href="https://www.instagram.com/zonasnprr?igsh=MTl1aHZqc3ExajZ2ZA==" target="_blank" title="Zona - Messi10">ZONA</a>
+    <a href="https://www.instagram.com/raflinovall?igsh=ZGdmb3U2MTY2dHJu" target="_blank" title="Rafly - Anak Baik">RAFLY</a>
+    <a href="https://www.instagram.com/tb_rachmatf?igsh=bnh2Z2t3MTN3eHo0" target="_blank" title="Tubagus - Sports">TUBAGUS</a>
+    <a href="https://www.instagram.com/ghazien07?igsh=MTUzMHhvcjNxaWk4Ng==" target="_blank" title="Nehan - Pintar">NEHAN</a>
+    <a href="https://www.instagram.com/fathurrhmn.n?igsh=MThlNzQxMnN6eWRzaA==" target="_blank" title="Fathur - Bucin">FATHUR</a>
+    <a href="https://www.instagram.com/agusszx?igsh=MWpuN2M5bWtwOHJvaQ==" target="_blank" title="Agus - Sipit">AGUS</a>
+    <a href="https://www.instagram.com/muhammaadnurii?igsh=dWp6cTYxOHBpaDl1" target="_blank" title="Nuri - Laut">NURI</a>
+    <a href="https://www.instagram.com/fariz.alkhfi?igsh=MW13ZnRwaTgxaGo2cg==" target="_blank" title="Fariz - Ustad">FARIZ</a>
+  </div>
 </section>
 
 <section id="gallery">
-    <h2>Galeri Kelas</h2>
-    <div class="gallery-grid">
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/20250407_222858_790.jpg">
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20221217-WA0013.jpg">
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0006.jpg">
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20230406-WA0009.jpg">
-         <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250222-WA0275.jpg"> 
-             
-
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250121-WA0045.jpg" 
-             >
-
-        <img src="https://github.com/jonasianipar7-pixel/profile/raw/c3b1154edb05d2f83ce2366d19d5e01650d0ecb1/IMG-20250119-WA0013.jpg" 
-             >
-             
-             
+  <h2>Galeri Kelas</h2>
+  <div class="gallery-grid">
+    
              
 
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/20250407_222858_790.jpg" >
@@ -215,46 +256,35 @@
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250430-WA0175.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250511-WA0072.jpg" >
 <img src="https://github.com/jonasianipar7-pixel/profile/raw/2cce8d11afd0360e00efe4dbd9e65e6732d65d2f/IMG-20250603-WA0052.jpg">
-    </div>
+  </div>
 </section>
 
 <section id="contact">
-    <h2>Kontak</h2>
-    <p style="text-align:center;">
-        Hubungi kami: <a href="https://www.instagram.com/darkside.scienceone" target="_blank">Instagram</a>
-    </p>
+  <h2>Kontak</h2>
+  <p style="text-align:center;">
+    Hubungi kami di <a href="https://www.instagram.com/darkside.scienceone" target="_blank">Instagram</a>
+  </p>
 </section>
 
 <footer>
-    © 2025 IPA ONE BOYS
+  © 2025 IPA ONE BOYS
 </footer>
 
-<!-- MUSIC -->
 <audio autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-    // Optional: efek scroll animasi sederhana
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', () => {
-        sections.forEach(sec => {
-            const rect = sec.getBoundingClientRect();
-            if(rect.top < window.innerHeight - 100) {
-                sec.style.opacity = 1;
-                sec.style.transform = 'translateY(0)';
-            } else {
-                sec.style.opacity = 0;
-                sec.style.transform = 'translateY(50px)';
-            }
-        });
-    });
-
+  // Scroll Animasi
+  const sections = document.querySelectorAll('section');
+  window.addEventListener('scroll', () => {
     sections.forEach(sec => {
-        sec.style.transition = 'all 0.8s ease';
-        sec.style.opacity = 0;
-        sec.style.transform = 'translateY(50px)';
+      const rect = sec.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 50) {
+        sec.classList.add('show');
+      }
     });
+  });
 </script>
 
 </body>
